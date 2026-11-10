@@ -49,7 +49,7 @@ The map is a snapshot of the dashboard inputs at 2026-05-07 13:55 UTC. In the li
 
 ## Project contributions
 
-Completed as a team project at the University of Sydney in Semester 1, 2026. The team covered data acquisition and caching, cleaning and entity resolution, database integration, and MQTT replay and dashboard validation.
+This collaborative project covered data acquisition and caching, cleaning and entity resolution, database integration, and MQTT replay and dashboard validation.
 
 ## Repository layout
 
@@ -68,10 +68,12 @@ python -m pip install -r requirements.txt
 jupyter lab
 ```
 
-1. Open the [batch notebook](batch_pipeline/energy_batch_pipeline.ipynb) and run Tasks 1–4. It downloads inputs and generates the staging database at `data/batch/Task4_output/energy_task4.duckdb`. Set the optional geocoding endpoint before running Task 3 if you want coordinates.
+1. Open the [batch notebook](batch_pipeline/energy_batch_pipeline.ipynb) and run Tasks 1–4. It downloads inputs and generates the staging database at `data/batch/Task4_output/energy_task4.duckdb`. Set the optional geocoding endpoint before running Stage 3 if you want coordinates.
 2. Open the [streaming notebook](streaming_pipeline/nem_mqtt_replay_dashboard.ipynb). Set `OPENELECTRICITY_API_KEY` and enable `RUN_SMOKE_TEST` for a small API check. Then disable the smoke test, enable `RUN_FULL_RETRIEVAL`, and run the configuration and retrieval cells to cache the week of 1–7 May 2026. Turn full retrieval off after the cache is ready.
 3. Enable `RUN_TASK2_PROCESSING` and `RUN_TASK2_VALIDATION` to generate and check the cleaned CSVs. Enable `RUN_TASK4` and run section 14 to copy the batch database and build the seven normalised tables in `data/streaming/Task4_output/energy_task4.duckdb`.
 4. Start a local MQTT broker such as Mosquitto. In one kernel, enable `RUN_TASK5_SUBSCRIBER` and `RUN_TASK5_DASHBOARD` in the streaming notebook and open the local dashboard on port 8050. In a second kernel, load the notebook definitions with build and runtime switches off, then enable `RUN_TASK6_DEMO` to replay two chunks of 300 observations. Use a fresh or reset cursor to replay from the beginning.
+
+If you already built a streaming database from an earlier revision, rerun Stage 4 to rebuild its historical facility tables.
 
 See the [data guide](data/README.md) for official sources, input windows, and generated files.
 
