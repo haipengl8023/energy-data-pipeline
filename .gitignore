@@ -1,0 +1,10 @@
+data/*
+!data/README.md
+*.duckdb
+*.duckdb.wal
+.env
+.env.*
+.venv/
+.idea/
+.ipynb_checkpoints/
+__pycache__/
