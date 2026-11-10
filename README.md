@@ -49,7 +49,7 @@ The map is a snapshot of the dashboard inputs at 2026-05-07 13:55 UTC. In the li
 
 ## Project contributions
 
-Completed as a team project for COMP5339 at the University of Sydney in Semester 1, 2026. The team covered data acquisition and caching, cleaning and entity resolution, database integration, and MQTT replay and dashboard validation.
+Completed as a team project at the University of Sydney in Semester 1, 2026. The team covered data acquisition and caching, cleaning and entity resolution, database integration, and MQTT replay and dashboard validation.
 
 ## Repository layout
 
@@ -79,7 +79,7 @@ See the [data guide](data/README.md) for official sources, input windows, and ge
 | --- | --- |
 | `OPENELECTRICITY_API_KEY` | Required for API retrieval. Use the process environment or a local repository-root `.env`. |
 | `NOMINATIM_SEARCH_URL` | Optional search endpoint on your own or authorised Nominatim-compatible service. Set in the process environment. The batch notebook leaves coordinates null when unset. |
-| `MQTT_HOST`, `MQTT_PORT`, `MQTT_TOPIC` | Broker settings. Defaults are `localhost`, `1883`, and `comp5339/assignment2/nem/facility`. |
+| `MQTT_HOST`, `MQTT_PORT`, `MQTT_TOPIC` | Broker settings. Defaults are `localhost`, `1883`, and `energy/nem/facility`. |
 | `TASK6_CHUNK_SIZE` | Records per continuous replay round. Defaults to `3000`. |
 | `DASHBOARD_PORT` | Local Dash port. Defaults to `8050`. |
 | `ENABLE_DB_UPSERT`, `TASK4_DB` | Optional subscriber writes, disabled by default, and an override for the target DuckDB path. |
